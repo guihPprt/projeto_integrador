@@ -1,0 +1,431 @@
+/* =========================
+   Fontes
+========================= */
+@font-face {
+    font-family: "Avenir";
+    src: url("../Assets/Fonts/Avenir Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* =========================
+   Reset & Base
+========================= */
+* {
+    margin: 0;
+    font-family: "Avenir", sans-serif;
+}
+
+body {
+    background-color: #EFFFC4;
+    display: flex;
+}
+
+/* =========================
+   Header
+========================= */
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(25, 53, 12, 0.5);
+}
+
+header img {
+    width: 72px;
+    padding: 10px 0 10px 64px;
+}
+
+header nav {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 256px;
+    padding: 0 64px;
+    font-size: 16px;
+    color: #fff;
+}
+
+#right {
+    gap: 16px;
+}
+
+#right button {
+    width: 147px;
+    height: 41px;
+    border: none;
+    border-radius: 4px;
+    background-color: #B98A25;
+    font-size: 16px;
+    color: #fff;
+}
+
+/* =========================
+   Main
+========================= */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+}
+
+/* =========================
+   Name Blocks
+========================= */
+.Name,
+.Name-d {
+    width: 1000px;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    color: white;
+}
+
+.Name p,
+.Name-d p {
+    flex: 01;
+    margin-left: 32px;
+}
+
+.Name img,
+.Name-d img {
+    width: 16px;
+    margin-right: 32px;
+}
+
+.item {
+    transform: translateX(-2.5%);
+    width: 60rem;
+    height: auto;
+}
+
+.itens {
+    display: flex;
+    flex-direction: column;
+}
+
+.hide {
+    display: none;
+}
+
+/* =========================
+   Top Bars
+========================= */
+.top {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px 0px 0px;
+    cursor: pointer;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.cards {
+    transition: 100ms all;
+}
+
+.card {
+    background: rgba(104, 125, 49, 0.25);
+    padding: 10px;
+    display: flex;
+    width: 61.26rem;
+    transform: translateX(16px);
+    justify-content: center;
+    align-items: center;
+}
+
+.card .nome {
+    margin-left: 16px;
+    flex: 1;
+}
+
+.card .disp {
+    flex: 1;
+}
+
+.card .est {
+    flex: 1;
+}
+
+.card .tel {
+    flex: 1;
+    text-align: end;
+}
+
+.card button {
+    border: none;
+    color: white;
+    padding: 4px 24px;
+    margin-left: 16px;
+    margin-right: 10px;
+
+    border-radius: 4px;
+    background: var(--02, #687D31);
+}
+
+.Name .top {
+    background-color: #687D31;
+}
+
+.Name-d .top {
+    background-color: #19350C;
+}
+
+/* =========================
+   Header Images & Arrows
+========================= */
+.Header {
+    display: flex;
+    margin: 32px;
+}
+
+.Header .images {
+    width: 640px;
+    display: flex;
+    overflow: hidden;
+}
+
+.Header .images img {
+    height: 316px;
+    z-index: 0;
+    transition: 200ms;
+}
+
+.Header .Right-A {
+    background-color: #B98A25;
+    border-radius: 0 4px 4px 0;
+}
+
+.Header .Left-A {
+    background-color: #B98A25;
+    border-radius: 4px 0 0 4px;
+}
+
+.Arrow {
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.Arrow:hover {
+    font-size: 28px;
+    background-color: #E3B843;
+}
+
+
+
+
+.up {
+    transform: rotateZ(180deg);
+}
+
+/* =========================
+   Animations
+========================= */
+@keyframes next {
+    from {
+        transform: translateX(-200px);
+    }
+
+    to {
+        transform: translateX(-1200px);
+    }
+}
+
+@keyframes back {
+    from {
+        transform: translateX(-1200px);
+    }
+
+    to {
+        transform: translateX(-200px);
+    }
+}
+
+.Next {
+    animation: next 200ms;
+}
+
+.back {
+    animation: back 200ms;
+}
+
+/* =========================
+   Extras
+========================= */
+#ds {
+    transform: translateX(-95%) translateY(20px);
+    margin-bottom: 32px;
+    font-weight: 100;
+}
+
+#vmais {
+    margin: 32px;
+    padding: 8px 64px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background: var(--04, #B98A25);
+}
+
+#vmais:hover {
+    background-color: var(--04, #E3B843);
+}
+
+.bot {
+    width: 98.4%;
+    transform: translateX(16px);
+    display: flex;
+    justify-content: center;
+}
+
+
+aside {
+    display: flex;
+    width: 219.5px;
+    flex-direction: column;
+    height: 100vh;
+    background: rgba(25, 53, 12, 0.50);
+    align-items: center;
+}
+
+aside img {
+    height: 117.5px;
+    padding: 32px;
+}
+
+aside nav {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-15%);
+    gap: 8px;
+}
+
+aside div {
+    flex: 1;
+}
+
+aside div button {
+    border-radius: 4px;
+    background: var(--04, #B98A25);
+    border: none;
+
+    display: flex;
+    padding: 8px 48px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.selected {
+    color: var(--01, #19350C);
+    text-align: center;
+    font-family: Avenir;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.topform {
+    display: flex;
+}
+
+.inp {
+    display: flex;
+    flex-direction: column;
+}
+
+#prod {
+    width: 336.5px;
+}
+
+#safras {
+    width: 150px;
+    height: 31px;
+}
+
+#qtd {
+    width: 180px;
+}
+
+#qtd,
+#prod {
+    height: 25px;
+}
+
+
+
+.botform {
+    display: flex;
+    flex-direction: column;
+}
+
+.botform input {
+    width: 675.5px;
+    height: 25px;
+}
+
+.panel button {
+    margin-top: 4px;
+    background-color: #687D31;
+    color: white;
+    border: none;
+
+    display: flex;
+    padding: 4px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.panel {
+    background-color: rgba(104, 125, 49, 0.25);
+    padding: 16px;
+}
+
+table {
+    width: 644.5px;
+}
+
+.toprow {
+    color: #19350C;
+
+}
+
+th {
+    font-weight: bold;
+}

@@ -6,43 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MicroConnect</title>
     <link rel="shortcut icon" href="Assets/logo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="styles/Login.css">
+    <link rel="stylesheet" href="styles/interessado.css">
 </head>
 
 <body>
-    <header>
+    <aside>
         <a href="index.html">
-            <img src="Assets/logo.svg">
+            <img src="Assets/logo2.svg">
         </a>
         <nav>
-            <a onclick="alert('EM CONSTRUÇÂO')">PRODUTORES</a>
-            <a href="produto.html">PRODUTOS</a>
-            <div id="right">
-                <a onclick="alert('EM CONSTRUÇÃO')">CADASTRE-SE</a>
-                <a href="login.html">
-                    <button type="button">LOGIN</button>
-                </a>
-            </div>
+            <a>CLIENTES</a>
+            <a class="selected">PRODUTORES</a>
         </nav>
-    </header>
-    <main>
-        <h2 id="ds">ACESSAR SUA CONTA</h2>
-        <div class="panel">
-            <form>
-                <div class="inp">
-                    <label for="cpf">CPF/CNPJ</label>
-                    <input id="cpf" name="cpf" type="number">
-                </div>
-                <div class="inp">
-                    <label for="senha">Senha</label>
-                    <input id="pwd" type="password">
-                </div>
-                <div class="actions">
-                    <a>ESQUECI MINHA SENHA</a>
-                    <button id="login" type="button">ENTRAR</button>
-                </div>
-            </form>
+        <div>
+            <button type="button">SAIR</button>
         </div>
+    </aside>
+    <main>
+        <h2 id="ds">ÁREA DO CLIENTE</h2>
+
+        <div class="panel">
+            <div class="toppanel">
+                <div class="left">
+                    <div class="campo">
+                        <h3>Cliente</h3>
+                        <h2 id="username">CLIENTE LTDA</h2>
+                    </div>
+                    <div class="campo">
+                        <h3>CPF/CNPJ</h3>
+                        <h2 id="cpf">00.000.000.000/0001</h2>
+                    </div>
+                    <div class="campo-horizontal">
+                        <div class="campo">
+                            <h4>Email:</h4>
+                            <h5 id="email">email@cliente.com</h5>
+                        </div>
+                        <div class="campo">
+                            <h4>Senha:</h4>
+                            <h5 id="senha">***********</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <button>ALTERAR DADOS</button>
+                    <button>RESERVAR</button>
+                </div>  
+            </div>
+
+            <div class="table">
+                
+            </div>
+        </div>
+
     </main>
 </body>
 <script src="scripts/login.js"></script>

@@ -50,11 +50,13 @@ header nav {
     gap: 16px;
 }
 
+
 #right button {
     width: 147px;
     height: 41px;
     border: none;
     border-radius: 4px;
+    margin: 8px;
     background-color: #B98A25;
     font-size: 16px;
     color: #fff;

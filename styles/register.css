@@ -99,7 +99,7 @@ main {
     margin-right: 32px;
 }
 
-.item{
+.item {
     transform: translateX(-2.5%);
     width: 60rem;
     height: auto;
@@ -127,7 +127,7 @@ main {
     cursor: pointer;
 }
 
-a{
+a {
     cursor: pointer;
     text-decoration: none;
     color: white;
@@ -137,7 +137,7 @@ button {
     cursor: pointer;
 }
 
-button:hover{
+button:hover {
     transform: scale(1.05);
 }
 
@@ -240,9 +240,7 @@ button:hover{
     background-color: #E3B843;
 }
 
-.down-arrow {
-    
-}
+
 
 
 .up {
@@ -284,6 +282,7 @@ button:hover{
    Extras
 ========================= */
 #ds {
+    margin-top: 32px;
     margin-bottom: 32px;
     font-weight: 100;
 }
@@ -301,9 +300,90 @@ button:hover{
     background-color: var(--04, #E3B843);
 }
 
-.bot{
+.bot {
     width: 98.4%;
     transform: translateX(16px);
     display: flex;
     justify-content: center;
+}
+
+
+
+.panel {
+    border-radius: 4px;
+    background: rgba(104, 125, 49, 0.25);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+}
+
+form .inp {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: var(--01, #19350C);
+    font-family: Avenir;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.inp input {
+    width: 503.5px;
+    outline: none;
+}
+
+form .actions {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 8px;
+}
+
+
+.actions button {
+    display: flex;
+    padding: 4px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+
+    color: #FFF;
+    font-family: Avenir;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    border-radius: 4px;
+    background: var(--02, #687D31);
+    color: white;
+    border: none;
+}
+
+
+.actions a {
+    color: var(--02, #687D31);
+    font-family: Avenir;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.section {
+    display: flex;
+    gap: 8px;
+}
+
+.section .inp input {
+    width: 248px;
 }

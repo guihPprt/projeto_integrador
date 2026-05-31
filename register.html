@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MicroConnect</title>
     <link rel="shortcut icon" href="Assets/logo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="styles/Login.css">
+    <link rel="stylesheet" href="styles/register.css">
 </head>
 
 <body>
@@ -26,25 +26,35 @@
         </nav>
     </header>
     <main>
-        <h2 id="ds">ACESSAR SUA CONTA</h2>
+        <h2 id="ds">CADASTRE-SE</h2>
         <div class="panel">
-            <form>
+            <form id="registerForm">
                 <div class="inp">
-                    <label for="cpf">CPF/CNPJ</label>
-                    <input id="cpf" name="cpf" type="number">
+                    <label for="name">Nome</label>
+                    <input id="name" name="name" type="text" required>
                 </div>
                 <div class="inp">
-                    <label for="senha">Senha</label>
-                    <input id="pwd" type="password">
+                    <label for="cpf">CPF/CNPJ</label>
+                    <input id="cpf" name="cpf" type="number" required>
+                </div>
+                <div class="section">
+                    <div class="inp">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" required>
+                    </div>
+                    <div class="inp">
+                        <label for="pwd">Senha</label>
+                        <input id="pwd" type="password" required>
+                    </div>
                 </div>
                 <div class="actions">
                     <a>ESQUECI MINHA SENHA</a>
-                    <button id="login" type="button">ENTRAR</button>
+                    <button id="login" type="submit">ENTRAR</button>
                 </div>
             </form>
         </div>
     </main>
 </body>
-<script src="scripts/login.js"></script>
+<script src="scripts/register.js"></script>
 
 </html>

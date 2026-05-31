@@ -4,23 +4,7 @@ let posicaoAtual = -200;
 
 
 
-const users = [
-    {
-        "cpf": 12345678910,
-        "password": 123,
-        "username": "Produtor X",
-        "type": "prod"
-    },
-    {
-        "cpf": 45678912345,
-        "password": 456,
-        "username": "Interessado Y",
-        "type": "int"
-    }
-];
 
-
-localStorage.setItem("users", JSON.stringify(users));
 
 function next() {
     const imgs = document.querySelectorAll(".images img");

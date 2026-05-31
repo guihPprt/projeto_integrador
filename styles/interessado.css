@@ -18,6 +18,7 @@
 
 body {
     background-color: #EFFFC4;
+    display: flex;
 }
 
 /* =========================
@@ -50,6 +51,7 @@ header nav {
     gap: 16px;
 }
 
+
 #right button {
     width: 147px;
     height: 41px;
@@ -68,8 +70,9 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    padding: 32px;
 }
 
 /* =========================
@@ -99,7 +102,7 @@ main {
     margin-right: 32px;
 }
 
-.item{
+.item {
     transform: translateX(-2.5%);
     width: 60rem;
     height: auto;
@@ -127,7 +130,7 @@ main {
     cursor: pointer;
 }
 
-a{
+a {
     cursor: pointer;
     text-decoration: none;
     color: white;
@@ -137,7 +140,7 @@ button {
     cursor: pointer;
 }
 
-button:hover{
+button:hover {
     transform: scale(1.05);
 }
 
@@ -240,9 +243,7 @@ button:hover{
     background-color: #E3B843;
 }
 
-.down-arrow {
-    
-}
+
 
 
 .up {
@@ -284,7 +285,8 @@ button:hover{
    Extras
 ========================= */
 #ds {
-    margin-bottom: 32px;
+    transform: translateX(-195%) translateY(-0px);
+    margin-bottom: 16px;
     font-weight: 100;
 }
 
@@ -301,9 +303,185 @@ button:hover{
     background-color: var(--04, #E3B843);
 }
 
-.bot{
+.bot {
     width: 98.4%;
     transform: translateX(16px);
     display: flex;
     justify-content: center;
+}
+
+
+aside {
+    display: flex;
+    width: 219.5px;
+    flex-direction: column;
+    height: 100vh;
+    background: rgba(25, 53, 12, 0.50);
+    align-items: center;
+}
+
+aside img {
+    height: 117.5px;
+    padding: 32px;
+}
+
+aside nav {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-15%);
+    gap: 8px;
+}
+
+aside div {
+    flex: 1;
+}
+
+aside div button {
+    border-radius: 4px;
+    background: var(--04, #B98A25);
+    border: none;
+
+    display: flex;
+    padding: 8px 48px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.selected {
+    color: var(--01, #19350C);
+    text-align: center;
+    font-family: Avenir;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.topform {
+    display: flex;
+}
+
+.inp {
+    display: flex;
+    flex-direction: column;
+}
+
+#prod {
+    width: 336.5px;
+}
+
+#safras {
+    width: 150px;
+    height: 31px;
+}
+
+#qtd {
+    width: 180px;
+}
+
+#qtd,
+#prod {
+    height: 25px;
+}
+
+
+
+.botform {
+    display: flex;
+    flex-direction: column;
+}
+
+.botform input {
+    width: 675.5px;
+    height: 25px;
+}
+
+.panel button {
+    margin-top: 4px;
+    background-color: #687D31;
+    color: white;
+    border: none;
+
+    display: flex;
+    padding: 4px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.panel {
+    background-color: rgba(104, 125, 49, 0.25);
+    width: 1000px;
+    height: 490px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+table {
+    width: 644.5px;
+}
+
+.toprow {
+    color: #19350C;
+
+}
+
+th {
+    font-weight: bold;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.left h3, .left h2, .left h5, .left h4 {
+    font-weight: 400;
+}
+
+.left h3 {
+    font-size: 24px;
+}
+
+.left h2{
+    font-size: 30px;
+}
+
+
+
+.campo-horizontal {
+    display: flex;
+    gap: 256px
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    width: 100%;
+}
+
+.right button {
+    
+
+    padding: 8px 48px;
+    width: 256px;
+
+}
+
+.table {
+    flex: 1;
+}
+
+.toppanel{
+    display: flex;
+    flex:1;
 }

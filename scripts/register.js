@@ -8,12 +8,17 @@ function register() {
     let users = JSON.parse(localStorage.getItem("users")) || [];
     
 
+    let cadastrado = false;
     users.forEach(element => {
         if(element.cpf === Number(document.getElementById("cpf").value)) {
             alert("USUARIO JA CADASTRADO");
-
+            cadastrado = true;
         }
     });
+
+    if(cadastrado){
+        return;
+    }
 
     const usuario = {
         "cpf": Number(document.getElementById("cpf").value),

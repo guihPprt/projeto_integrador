@@ -15,8 +15,8 @@
             <img src="Assets/logo2.svg">
         </a>
         <nav>
-            <a>CLIENTES</a>
-            <a class="selected">PRODUTORES</a>
+            <a href="interessado.html">CLIENTES</a>
+            <a class="selected" href="produtor.html">PRODUTORES</a>
         </nav>
         <div>
             <button type="button">SAIR</button>
@@ -46,22 +46,28 @@
             </div>
             <div class="botform">
                 <label for="endereco">Endereço</label>
-                <input type="text" name="endereco">
+                <input type="text" id="endereco" name="endereco">
             </div>
-            <button type="button">ADICIONAR</button>
+            <button id="criar" type="button">ADICIONAR</button>
 
             <div>
-                <table>
-                    <tr class="toprow">
-                        <th>Produto</th>
-                        <th>Época de Safra</th>
-                        <th>Quantidade Disponivel</th>
-                    </tr>
+                <table id="tabelaprodutos">
+                    <thead>
+                        <tr class="toprow">
+                            <th>Produto</th>
+                            <th>Época de Safra</th>
+                            <th>Quantidade Disponivel</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tpbody">
+                        
+                    </tbody>
                 </table>
             </div>
-        </div>  
+        </div>
     </main>
 </body>
-<script src="scripts/login.js"></script>
+<script src="scripts/produtor.js"></script>
 
 </html>

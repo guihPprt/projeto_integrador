@@ -25,5 +25,6 @@ button.addEventListener("click", (event) => {
 
             
         }
+        alert("CPF/CNPJ e/ou senha incorretos");
     }
 });

@@ -30,6 +30,6 @@ function register() {
 
     users.push(usuario);
     localStorage.setItem("users",JSON.stringify(users));
-
+    alert("USUARIO CADASTRADO")
     
 }

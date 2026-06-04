@@ -7,7 +7,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const produtos = getProdutos();
     const usuarioLogado = getUsuario();
     
-    // Mostra só os produtos do usuário logado
     produtos
         .filter(p => p.criador === usuarioLogado.cpf)
         .forEach(p => addTable(p.nome, p.safra, p.qtd, false));
@@ -39,7 +38,6 @@ function add() {
 
     const produtos = getProdutos();
 
-    // Chave única: mesmo nome E mesmo criador
     const jaExiste = produtos.some(
         p => p.nome.toLowerCase() === nome.toLowerCase() && p.criador === usuarioLogado.cpf
     );
@@ -65,18 +63,36 @@ function addTable(nome, safra, qtd, animado = false) {
         <td>${nome}</td>
         <td>${safra}</td>
         <td>${qtd} unidades</td>
-        <td><button class="btn-alterar" type="button">ALTERAR</button></td>
+        <td>
+            <button class="btn-alterar" type="button">ALTERAR</button>
+            <button class="btn-apagar" type="button">APAGAR</button>
+        </td>
     `;
 
     tr.querySelector(".btn-alterar").addEventListener("click", () => alterar(tr, nome));
+    tr.querySelector(".btn-apagar").addEventListener("click", () => apagar(tr, nome));
     tabela.appendChild(tr);
+}
+
+// ✅ Nova função de apagar
+function apagar(tr, nome) {
+    if (!confirm(`Deseja apagar o produto "${nome}"?`)) return;
+
+    const usuarioLogado = getUsuario();
+    let produtos = getProdutos();
+
+    produtos = produtos.filter(
+        p => !(p.nome === nome && p.criador === usuarioLogado.cpf)
+    );
+
+    saveProdutos(produtos);
+    tr.remove();
 }
 
 function alterar(tr, nomeOriginal) {
     const produtos = getProdutos();
     const usuarioLogado = getUsuario();
 
-    // Busca pelo nome E pelo criador
     const produto = produtos.find(
         p => p.nome === nomeOriginal && p.criador === usuarioLogado.cpf
     );
@@ -96,6 +112,7 @@ function alterar(tr, nomeOriginal) {
         <td>
             <button class="btn-salvar" type="button">SALVAR</button>
             <button class="btn-cancelar" type="button">✕</button>
+            <button class="btn-apagar" type="button">APAGAR</button>
         </td>
     `;
 
@@ -110,7 +127,6 @@ function alterar(tr, nomeOriginal) {
             return;
         }
 
-        // Atualiza só o item do criador correto
         const index = produtos.findIndex(
             p => p.nome === nomeOriginal && p.criador === usuarioLogado.cpf
         );
@@ -121,9 +137,13 @@ function alterar(tr, nomeOriginal) {
             <td>${novoNome}</td>
             <td>${novaSafra}</td>
             <td>${novaQtd} unidades</td>
-            <td><button class="btn-alterar" type="button">ALTERAR</button></td>
+            <td>
+                <button class="btn-alterar" type="button">ALTERAR</button>
+                <button class="btn-apagar" type="button">APAGAR</button>
+            </td>
         `;
         tr.querySelector(".btn-alterar").addEventListener("click", () => alterar(tr, novoNome));
+        tr.querySelector(".btn-apagar").addEventListener("click", () => apagar(tr, novoNome));
     });
 
     tr.querySelector(".btn-cancelar").addEventListener("click", () => {
@@ -131,10 +151,16 @@ function alterar(tr, nomeOriginal) {
             <td>${produto.nome}</td>
             <td>${produto.safra}</td>
             <td>${produto.qtd} unidades</td>
-            <td><button class="btn-alterar" type="button">ALTERAR</button></td>
+            <td>
+                <button class="btn-alterar" type="button">ALTERAR</button>
+                <button class="btn-apagar" type="button">APAGAR</button>
+            </td>
         `;
         tr.querySelector(".btn-alterar").addEventListener("click", () => alterar(tr, produto.nome));
+        tr.querySelector(".btn-apagar").addEventListener("click", () => apagar(tr, produto.nome));
     });
+
+    tr.querySelector(".btn-apagar").addEventListener("click", () => apagar(tr, nomeOriginal));
 }
 
 function limparCampos() {

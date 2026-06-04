@@ -312,12 +312,18 @@ button:hover {
 
 
 aside {
+    width: 219px;
+    min-width: 219px;
+    min-height: 100vh;      /* ← era height: 100vh */
+    height: 100%;           /* ← acompanha o crescimento do main */
+    position: sticky;
+    top: 0;
+    align-self: stretch;    /* ← estica para preencher a altura do body */
     display: flex;
-    width: 219.5px;
     flex-direction: column;
-    height: 100vh;
-    background: rgba(25, 53, 12, 0.50);
     align-items: center;
+    background: rgba(25, 53, 12, 0.50);
+    flex-shrink: 0;
 }
 
 aside img {
@@ -478,7 +484,7 @@ td {
 .tpbody td:nth-child(4),
 .toprow th:nth-child(4) { width: 15%; }
 
-.btn-alterar {
+.btn-alterar, .btn-apagar {
     background-color: #687D31;
     color: white;
     border: none;
@@ -487,10 +493,11 @@ td {
     font-size: 12px;
     font-weight: bold;
     cursor: pointer;
+    width: 100px;
     letter-spacing: 0.03em;
 }
 
-.btn-alterar:hover {
+.btn-alterar:hover, .btn-apagar:hover {
     background-color: #4e5f24;
 }
 

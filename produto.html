@@ -11,10 +11,17 @@
 
 <body>
     <header>
-        <a href="index.html">
-            <img src="Assets/logo.svg">
+        <div class="menu-hamburger mobile-only">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <a href="index.html" class="logo-container">
+            <img src="Assets/logo.svg" class="logo-img">
         </a>
-        <nav>
+
+        <nav class="nav-desktop">
             <a onclick="alert('EM CONSTRUÇÂO')">PRODUTORES</a>
             <a href="produto.html">PRODUTOS</a>
             <div id="right">
@@ -24,14 +31,18 @@
                 </a>
             </div>
         </nav>
-    </header>
-    <main>
-       
 
+        <div class="profile-mobile mobile-only">
+            <a href="login.html">
+                <img src="Assets/profile.svg" alt="Perfil" onerror="this.parentNode.innerHTML='👤'">
+            </a>
+        </div>
+    </header>
+
+    <main>
         <h2 id="ds">LISTA COMPLETA DE PRODUTOS</h2>
 
         <div class="itens">
-            <!-- Morango -->
             <div class="item" id="morango">
                 <div class="Name-d">
                     <div class="top" onclick="esconder('morango')">
@@ -41,16 +52,8 @@
                 </div>
                 <div class="cards card-morango hide">
                     <div class="card">
-                        <img width="30" src="https://placehold.co/32x32">
-                        <p class="nome">Produtor X</p>
-                        <p class="disp">10.000</p>
-                        <p class="est">Inverno</p>
-                        <p class="tel">(12) 93456-7890</p>
-                        <button type="button">RESERVAR</button>
-                    </div>
-                    <div class="card card-morango">
-                        <img width="30" src="https://placehold.co/32x32">
-                        <p class="nome">Produtor Y</p>
+                        <img width="32" height="32" src="https://placehold.co/32x32">
+                        <p class="nome">Produtor A</p>
                         <p class="disp">10.000</p>
                         <p class="est">Inverno</p>
                         <p class="tel">(12) 93456-7890</p>
@@ -59,7 +62,6 @@
                 </div>
             </div>
 
-            <!-- Caqui -->
             <div class="item" id="caqui">
                 <div class="Name">
                     <div class="top" onclick="esconder('caqui')">
@@ -69,8 +71,8 @@
                 </div>
                 <div class="cards card-caqui hide">
                     <div class="card">
-                        <img width="30" src="https://placehold.co/32x32">
-                        <p class="nome">Produtor Z</p>
+                        <img width="32" height="32" src="https://placehold.co/32x32">
+                        <p class="nome">Produtor A</p>
                         <p class="disp">10.000</p>
                         <p class="est">Inverno</p>
                         <p class="tel">(12) 93456-7890</p>
@@ -79,7 +81,6 @@
                 </div>
             </div>
 
-            <!-- Figo -->
             <div class="item" id="figo">
                 <div class="Name-d">
                     <div class="top" onclick="esconder('figo')">
@@ -89,7 +90,7 @@
                 </div>
                 <div class="cards card-figo hide">
                     <div class="card">
-                        <img width="30" src="https://placehold.co/32x32">
+                        <img width="32" height="32" src="https://placehold.co/32x32">
                         <p class="nome">Produtor A</p>
                         <p class="disp">10.000</p>
                         <p class="est">Inverno</p>
@@ -98,42 +99,7 @@
                     </div>
                 </div>
             </div>
-            <div class="item" id="kiwi">
-                <div class="Name">
-                    <div class="top" onclick="esconder('kiwi')">
-                        <p>Kiwi</p>
-                        <img class="down-arrow" src="Assets/Vector.svg">
-                    </div>
-                </div>
-                <div class="cards card-kiwi hide">
-                    <div class="card">
-                        <img width="30" src="https://placehold.co/32x32">
-                        <p class="nome">Produtor A</p>
-                        <p class="disp">10.000</p>
-                        <p class="est">Inverno</p>
-                        <p class="tel">(12) 93456-7890</p>
-                        <button type="button">RESERVAR</button>
-                    </div>
-                </div>
-            </div>
-            <div class="item" id="goiaba">
-                <div class="Name-d">
-                    <div class="top" onclick="esconder('goiaba')">
-                        <p>Goiaba</p>
-                        <img class="down-arrow" src="Assets/Vector.svg">
-                    </div>
-                </div>
-                <div class="cards card-goiaba hide">
-                    <div class="card">
-                        <img width="30" src="https://placehold.co/32x32">
-                        <p class="nome">Produtor A</p>
-                        <p class="disp">10.000</p>
-                        <p class="est">Inverno</p>
-                        <p class="tel">(12) 93456-7890</p>
-                        <button type="button">RESERVAR</button>
-                    </div>
-                </div>
-            </div>
+
             <div class="item" id="abacaxi">
                 <div class="Name">
                     <div class="top" onclick="esconder('abacaxi')">
@@ -143,7 +109,7 @@
                 </div>
                 <div class="cards card-abacaxi hide">
                     <div class="card">
-                        <img width="30" src="https://placehold.co/32x32">
+                        <img width="32" height="32" src="https://placehold.co/32x32">
                         <p class="nome">Produtor A</p>
                         <p class="disp">10.000</p>
                         <p class="est">Inverno</p>
@@ -152,12 +118,11 @@
                     </div>
                 </div>
             </div>
-            <div class="bot">
-                
-            </div>
-    </main>
-</body>
-<script src="scripts/script.js"></script>
-<script src="scripts/colapse.js"></script>
 
+            <div class="bot"></div>
+        </div>
+    </main>
+
+    <script src="scripts/colapse.js"></script>
+</body>
 </html>

@@ -1,6 +1,13 @@
-/* =========================
-   Fontes
-========================= */
+/* ==========================================================================
+   1. RESET & BASE (Comum para Desktop e Mobile)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding não estoure o tamanho do ecrã */
+    font-family: "Avenir", sans-serif;
+}
+
 @font-face {
     font-family: "Avenir";
     src: url("../Assets/Fonts/Avenir Regular.ttf") format("truetype");
@@ -8,382 +15,304 @@
     font-style: normal;
 }
 
-/* =========================
-   Reset & Base
-========================= */
-* {
-    margin: 0;
-    font-family: "Avenir", sans-serif;
-}
-
 body {
     background-color: #EFFFC4;
-}
-
-/* =========================
-   Header
-========================= */
-header {
+    overflow-x: hidden;
     width: 100%;
-    display: flex;
-    align-items: center;
-    background-color: rgba(25, 53, 12, 0.5);
 }
 
-header img {
-    width: 72px;
-    padding: 10px 0 10px 64px;
+/* Oculta os elementos mobile por padrão no Desktop */
+.mobile-only {
+    display: none !important;
 }
 
-header nav {
-    width: 100%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 256px;
-    padding: 0 64px;
-    font-size: 16px;
-    color: #fff;
-}
 
-#right {
-    gap: 16px;
-}
-
-#right button {
-    width: 147px;
-    height: 41px;
-    border: none;
-    border-radius: 4px;
-    margin: 8px;
-    background-color: #B98A25;
-    font-size: 16px;
-    color: #fff;
-}
-
-/* =========================
-   Main
-========================= */
-main {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* =========================
-   Name Blocks
-========================= */
-.Name,
-.Name-d {
-    width: 1000px;
-    height: 48px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 16px;
+a{
     color: white;
-}
-
-.Name p,
-.Name-d p {
-    flex: 01;
-    margin-left: 32px;
-}
-
-.Name img,
-.Name-d img {
-    width: 16px;
-    margin-right: 32px;
-}
-
-.item {
-    transform: translateX(-2.5%);
-    width: 60rem;
-    height: auto;
-}
-
-.itens {
-    display: flex;
-    flex-direction: column;
-}
-
-.hide {
-    display: none;
-}
-
-/* =========================
-   Top Bars
-========================= */
-.top {
-    width: 100%;
-    height: 64px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0px 0px 0px 0px;
-    cursor: pointer;
-}
-
-a {
-    cursor: pointer;
     text-decoration: none;
-    color: white;
 }
-
-button {
-    cursor: pointer;
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-.cards {
-    transition: 100ms all;
-}
-
-.card {
-    background: rgba(104, 125, 49, 0.25);
-    padding: 10px;
-    display: flex;
-    width: 61.26rem;
-    transform: translateX(16px);
-    justify-content: center;
-    align-items: center;
-}
-
-.card .nome {
-    margin-left: 16px;
-    flex: 1;
-}
-
-.card .disp {
-    flex: 1;
-}
-
-.card .est {
-    flex: 1;
-}
-
-.card .tel {
-    flex: 1;
-    text-align: end;
-}
-
-.card button {
-    border: none;
-    color: white;
-    padding: 4px 24px;
-    margin-left: 16px;
-    margin-right: 10px;
-
-    border-radius: 4px;
-    background: var(--02, #687D31);
-}
-
-.Name .top {
-    background-color: #687D31;
-}
-
-.Name-d .top {
-    background-color: #19350C;
-}
-
-/* =========================
-   Header Images & Arrows
-========================= */
-.Header {
-    display: flex;
-    margin: 32px;
-}
-
-.Header .images {
-    width: 640px;
-    display: flex;
-    overflow: hidden;
-}
-
-.Header .images img {
-    height: 316px;
-    z-index: 0;
-    transition: 200ms;
-}
-
-.Header .Right-A {
-    background-color: #B98A25;
-    border-radius: 0 4px 4px 0;
-}
-
-.Header .Left-A {
-    background-color: #B98A25;
-    border-radius: 4px 0 0 4px;
-}
-
-.Arrow {
-    width: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 800;
-    font-size: 22px;
-    color: #fff;
-    cursor: pointer;
-}
-
-.Arrow:hover {
-    font-size: 28px;
-    background-color: #E3B843;
-}
-
-
-
-
-.up {
-    transform: rotateZ(180deg);
-}
-
-/* =========================
-   Animations
-========================= */
-@keyframes next {
-    from {
-        transform: translateX(-200px);
+/* ==========================================================================
+   2. REGRAS EXCLUSIVAS PARA DESKTOP (Telas maiores que 768px)
+   ========================================================================== */
+@media (min-width: 769px) {
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: rgba(25, 53, 12, 0.5);
     }
 
-    to {
-        transform: translateX(-1200px);
+    header .logo-container img {
+        width: 72px;
+        padding: 10px 0 10px 0;
+        display: block;
+    }
+
+    header .nav-desktop {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 256px;
+        padding: 0 64px;
+        font-size: 16px;
+        color: #fff;
+    }
+
+    #right {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    #right button {
+        width: 147px;
+        height: 41px;
+        border: none;
+        border-radius: 4px;
+        margin: 8px;
+        background-color: #B98A25;
+        font-size: 16px;
+        color: #fff;
+        transition: transform 100ms;
+        cursor: pointer;
+    }
+
+    #right button:hover {
+        transform: scale(1.03);
+    }
+
+    main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #ds {
+        margin-top: 32px;
+        margin-bottom: 32px;
+        font-weight: 400;
+        color: #19350C;
+        letter-spacing: 1px;
+    }
+
+    .panel {
+        border-radius: 4px;
+        background: rgba(104, 125, 49, 0.25);
+        padding: 16px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    form .inp {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        color: #19350C;
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 4px;
+    }
+
+    .inp input {
+        width: 503.5px;
+        height: 40px;
+        outline: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 0 12px;
+        font-size: 16px;
+    }
+
+    .section {
+        display: flex;
+        gap: 16px;
+    }
+
+    .section .inp input {
+        width: 243.75px;
+    }
+
+    form .actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 8px;
+    }
+
+    .actions a {
+        color: #19350C;
+        font-size: 14px;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    #login {
+        padding: 10px 32px;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        background: #B98A25;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    #login:hover {
+        background-color: #E3B843;
     }
 }
 
-@keyframes back {
-    from {
-        transform: translateX(-1200px);
+/* ==========================================================================
+   3. REGRAS EXCLUSIVAS PARA MOBILE (Telas até 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .mobile-only {
+        display: flex !important;
     }
 
-    to {
-        transform: translateX(-200px);
+    /* Cabeçalho igual ao das outras páginas */
+    header {
+ background-color: rgba(25, 53, 12, 0.5);
+        padding: 12px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 60px;
     }
-}
 
-.Next {
-    animation: next 200ms;
-}
+    header .nav-desktop {
+        display: none !important;
+    }
 
-.back {
-    animation: back 200ms;
-}
+    header .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-/* =========================
-   Extras
-========================= */
-#ds {
-    margin-top: 32px;
-    margin-bottom: 32px;
-    font-weight: 100;
-}
+    header .logo-img {
+        width: 42px;
+        height: auto;
+    }
 
-#vmais {
-    margin: 32px;
-    padding: 8px 64px;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    background: var(--04, #B98A25);
-}
+    /* Hambúrguer */
+    .menu-hamburger {
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 16px;
+    }
 
-#vmais:hover {
-    background-color: var(--04, #E3B843);
-}
+    .menu-hamburger .bar {
+        height: 3px;
+        width: 100%;
+        background-color: #19350C;
+        border-radius: 2px;
+    }
 
-.bot {
-    width: 98.4%;
-    transform: translateX(16px);
-    display: flex;
-    justify-content: center;
-}
+    /* Ícone do Perfil */
+    .profile-mobile img {
+        width: 26px;
+        height: 26px;
+        display: block;
+    }
 
+    /* Título principal */
+    #ds {
+        font-size: 20px;
+        color: #19350C;
+        text-align: center;
+        margin: 32px 0 20px 0;
+        font-weight: bold;
+    }
 
+    /* Painel do Formulário Fluido */
+    .panel {
+        width: calc(100% - 32px);
+        margin: 0 auto;
+        background: rgba(104, 125, 49, 0.2);
+        border-radius: 4px;
+        padding: 20px 16px;
+    }
 
-.panel {
-    border-radius: 4px;
-    background: rgba(104, 125, 49, 0.25);
-}
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
 
-form {
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-    gap: 16px;
-}
+    form .inp {
+        display: flex;
+        flex-direction: column;
+    }
 
-form .inp {
-    display: flex;
-    flex-direction: column;
-}
+    label {
+        color: #19350C;
+        font-size: 16px;
+        margin-bottom: 6px;
+        text-align: left;
+    }
 
-label {
-    color: var(--01, #19350C);
-    font-family: Avenir;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
+    /* Inputs fluidos que nunca quebram a tela */
+    .inp input {
+        width: 100% !important;
+        height: 42px;
+        outline: none;
+        border: 1px solid rgba(25, 53, 12, 0.2);
+        border-radius: 4px;
+        padding: 0 12px;
+        font-size: 15px;
+        background-color: #fff;
+    }
 
-.inp input {
-    width: 503.5px;
-    outline: none;
-}
+    /* Quebra a linha dos campos Lado a Lado (E-mail e Senha) no mobile */
+    .section {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+    }
 
-form .actions {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    gap: 8px;
-}
+    .section .inp input {
+        width: 100% !important;
+    }
 
+    /* Ações inferiores (Esqueci minha senha e Entrar) */
+    form .actions {
+        display: flex;
+        flex-direction: column-reverse; /* Botão fica por cima, link por baixo */
+        gap: 16px;
+        align-items: center;
+        margin-top: 8px;
+        width: 100%;
+    }
 
-.actions button {
-    display: flex;
-    padding: 4px 24px;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+    .actions a {
+        color: #19350C;
+        font-size: 14px;
+        text-decoration: underline;
+        cursor: pointer;
+    }
 
-
-    color: #FFF;
-    font-family: Avenir;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-
-    border-radius: 4px;
-    background: var(--02, #687D31);
-    color: white;
-    border: none;
-}
-
-
-.actions a {
-    color: var(--02, #687D31);
-    font-family: Avenir;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.section {
-    display: flex;
-    gap: 8px;
-}
-
-.section .inp input {
-    width: 248px;
+    /* Botão ocupando largura total no telemóvel */
+    #login {
+        width: 100%;
+        height: 46px;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        background: #B98A25;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
 }

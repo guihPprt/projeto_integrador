@@ -1,29 +1,27 @@
-// Armazena a posição atual do slider (começa em -200px igual ao seu CSS)
-let posicaoAtual = -200; 
-
-
-
-
-
+// Controla o índice da imagem ativa (0 para a primeira, 1 para a segunda...)
+let slideIndex = 0; 
 
 function next() {
     const imgs = document.querySelectorAll(".images img");
-    
-    // Se não chegou no limite final (-1200px), avança 200px (ajuste o valor se precisar)
-    if (posicaoAtual > -900) {
-        posicaoAtual -= 900; // Move para a esquerda
-        for(var i = 0; i < imgs.length; i++)
-            imgs[i].style.transform = `translateX(${posicaoAtual}px)`;
+    // Só avança se não estiver na última imagem
+    if (slideIndex < imgs.length - 1) {
+        slideIndex++;
+        atualizarCarrossel(imgs);
     }
 }
 
 function back() {
     const imgs = document.querySelectorAll(".images img");
-    
-    // Se não está no início (-200px), volta 200px
-    if (posicaoAtual < -200) {
-        posicaoAtual += 900; // Move para a direita
-        for(var i = 0; i < imgs.length; i++)
-            imgs[i].style.transform = `translateX(${posicaoAtual}px)`;
+    // Só recua se não estiver na primeira imagem
+    if (slideIndex > 0) {
+        slideIndex--;
+        atualizarCarrossel(imgs);
+    }
+}
+
+function atualizarCarrossel(imgs) {
+    for (let i = 0; i < imgs.length; i++) {
+        // Move as fotos de forma limpa baseando-se no índice atual
+        imgs[i].style.transform = `translateX(${-slideIndex * 100}%)`;
     }
 }

@@ -1,6 +1,13 @@
-/* =========================
-   Fontes
-========================= */
+/* ==========================================================================
+   1. RESET & BASE (Comum para Desktop e Mobile)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Avenir", sans-serif;
+}
+
 @font-face {
     font-family: "Avenir";
     src: url("../Assets/Fonts/Avenir Regular.ttf") format("truetype");
@@ -8,304 +15,321 @@
     font-style: normal;
 }
 
-/* =========================
-   Reset & Base
-========================= */
-* {
-    margin: 0;
-    font-family: "Avenir", sans-serif;
-}
-
 body {
     background-color: #EFFFC4;
-}
-
-/* =========================
-   Header
-========================= */
-header {
+    overflow-x: hidden;
     width: 100%;
-    display: flex;
-    align-items: center;
-    background-color: rgba(25, 53, 12, 0.5);
 }
 
-header img {
-    width: 72px;
-    padding: 10px 0 10px 64px;
+/* Oculta os elementos mobile por padrão no Desktop */
+.mobile-only {
+    display: none !important;
 }
 
-header nav {
-    width: 100%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 256px;
-    padding: 0 64px;
-    font-size: 16px;
-    color: #fff;
-}
+/* ==========================================================================
+   2. REGRAS EXCLUSIVAS PARA DESKTOP (Telas maiores que 768px)
+   ========================================================================== */
+@media (min-width: 769px) {
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: rgba(25, 53, 12, 0.5);
+    }
 
-#right {
-    gap: 16px;
-}
+    header .logo-container img {
+        width: 72px;
+        padding: 10px 0 10px 0;
+        display: block;
+    }
 
+    header .nav-desktop {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 256px;
+        padding: 0 64px;
+        font-size: 16px;
+        color: #fff;
+    }
 
-#right button {
-    width: 147px;
-    height: 41px;
-    border: none;
-    border-radius: 4px;
-    margin: 8px;
-    background-color: #B98A25;
-    font-size: 16px;
-    color: #fff;
-}
+    #right {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
 
-/* =========================
-   Main
-========================= */
-main {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    #right button {
+        width: 147px;
+        height: 41px;
+        border: none;
+        border-radius: 4px;
+        margin: 8px;
+        background-color: #B98A25;
+        font-size: 16px;
+        color: #fff;
+        transition: transform 100ms;
+        cursor: pointer;
+    }
 
-/* =========================
-   Name Blocks
-========================= */
-.Name,
-.Name-d {
-    width: 1000px;
-    height: 48px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 16px;
-    color: white;
-}
+    #right button:hover {
+        transform: scale(1.03);
+    }
 
-.Name p,
-.Name-d p {
-    flex: 01;
-    margin-left: 32px;
-}
+    main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-.Name img,
-.Name-d img {
-    width: 16px;
-    margin-right: 32px;
-}
+    #ds {
+        margin-top: 32px;
+        margin-bottom: 32px;
+        font-weight: 400;
+        color: #19350C;
+        letter-spacing: 1px;
+    }
 
-.item{
-    transform: translateX(-2.5%);
-    width: 60rem;
-    height: auto;
-}
+    .itens {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
 
-.itens {
-    display: flex;
-    flex-direction: column;
-}
+    .item {
+        width: 60rem;
+        margin-bottom: 2px;
+    }
 
-.hide {
-    display: none;
-}
+    .Name, .Name-d {
+        width: 100%;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        color: white;
+    }
 
-/* =========================
-   Top Bars
-========================= */
-.top {
-    width: 100%;
-    height: 64px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0px 0px 0px 0px;
-    cursor: pointer;
-}
+    .top {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 32px;
+    }
 
-a{
-    cursor: pointer;
-    text-decoration: none;
-    color: white;
-}
+    .Name p, .Name-d p { font-size: 18px; }
+    .Name img, .Name-d img { width: 16px; transition: transform 0.2s ease; }
+    .Name .top { background-color: #687D31; }
+    .Name-d .top { background-color: #19350C; }
 
-button {
-    cursor: pointer;
-}
+    .hide { display: none !important; }
+    .up { transform: rotateZ(180deg); }
 
-button:hover{
-    transform: scale(1.05);
-}
+    .card {
+        background: rgba(104, 125, 49, 0.25);
+        padding: 12px 32px;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(25, 53, 12, 0.1);
+    }
 
-.cards {
-    transition: 100ms all;
-}
-
-.card {
-    background: rgba(104, 125, 49, 0.25);
-    padding: 10px;
-    display: flex;
-    width: 61.26rem;
-    transform: translateX(16px);
-    justify-content: center;
-    align-items: center;
-}
-
-.card .nome {
-    margin-left: 16px;
-    flex: 1;
-}
-
-.card .disp {
-    flex: 1;
-}
-
-.card .est {
-    flex: 1;
-}
-
-.card .tel {
-    flex: 1;
-    text-align: end;
-}
-
-.card button {
-    border: none;
-    color: white;
-    padding: 4px 24px;
-    margin-left: 16px;
-    margin-right: 10px;
-
-    border-radius: 4px;
-    background: var(--02, #687D31);
-}
-
-.Name .top {
-    background-color: #687D31;
-}
-
-.Name-d .top {
-    background-color: #19350C;
-}
-
-/* =========================
-   Header Images & Arrows
-========================= */
-.Header {
-    display: flex;
-    margin: 32px;
-}
-
-.Header .images {
-    width: 640px;
-    display: flex;
-    overflow: hidden;
-}
-
-.Header .images img {
-    height: 316px;
-    z-index: 0;
-    transition: 200ms;
-}
-
-.Header .Right-A {
-    background-color: #B98A25;
-    border-radius: 0 4px 4px 0;
-}
-
-.Header .Left-A {
-    background-color: #B98A25;
-    border-radius: 4px 0 0 4px;
-}
-
-.Arrow {
-    width: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 800;
-    font-size: 22px;
-    color: #fff;
-    cursor: pointer;
-}
-
-.Arrow:hover {
-    font-size: 28px;
-    background-color: #E3B843;
-}
-
-.down-arrow {
+    .card img { object-fit: cover; border-radius: 50%; }
+    .card .nome { margin-left: 16px; flex: 2; }
+    .card .disp, .card .est { flex: 1; text-align: center; }
+    .card .tel { flex: 1.5; text-align: end; }
     
+    .card button {
+        border: none;
+        color: white;
+        padding: 6px 24px;
+        margin-left: 16px;
+        border-radius: 4px;
+        background: #687D31;
+        cursor: pointer;
+    }
+    .card button:hover { transform: scale(1.03); }
+
+    .bot { width: 100%; display: flex; justify-content: center; margin: 32px 0; }
+    a { text-decoration: none; color: inherit; }
 }
 
-
-.up {
-    transform: rotateZ(180deg);
-}
-
-/* =========================
-   Animations
-========================= */
-@keyframes next {
-    from {
-        transform: translateX(-200px);
+/* ==========================================================================
+   3. REGRAS EXCLUSIVAS PARA MOBILE (Telas até 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .mobile-only {
+        display: flex !important;
     }
 
-    to {
-        transform: translateX(-1200px);
+    /* Cabeçalho Fiel ao Mockup do celular */
+    header {
+        padding: 12px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 60px;
+        background-color: rgba(25, 53, 12, 0.5);
     }
-}
 
-@keyframes back {
-    from {
-        transform: translateX(-1200px);
+    header .nav-desktop {
+        display: none !important;
     }
 
-    to {
-        transform: translateX(-200px);
+    header .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-}
 
-.Next {
-    animation: next 200ms;
-}
+    header .logo-img {
+        width: 42px;
+        height: auto;
+    }
 
-.back {
-    animation: back 200ms;
-}
+    /* Hambúrguer */
+    .menu-hamburger {
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 16px;
+    }
 
-/* =========================
-   Extras
-========================= */
-#ds {
-    margin-top: 32px;
-    margin-bottom: 32px;
-    font-weight: 100;
-}
+    .menu-hamburger .bar {
+        height: 3px;
+        width: 100%;
+        background-color: #19350C;
+        border-radius: 2px;
+    }
 
-#vmais {
-    margin: 32px;
-    padding: 8px 64px;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    background: var(--04, #B98A25);
-}
+    /* Perfil */
+    .profile-mobile img {
+        width: 26px;
+        height: 26px;
+        display: block;
+    }
 
-#vmais:hover {
-    background-color: var(--04, #E3B843);
-}
+    /* Título Superior */
+    #ds {
+        font-size: 18px;
+        color: #19350C;
+        text-align: center;
+        margin: 24px 0 16px 0;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+    }
 
-.bot{
-    width: 98.4%;
-    transform: translateX(16px);
-    display: flex;
-    justify-content: center;
+    /* Sanfonas Expandidas para Ocupar a Tela */
+    .itens {
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .item {
+        width: 100%;
+        margin-bottom: 2px;
+    }
+
+    .Name, .Name-d {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        color: white;
+    }
+
+    .top {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 16px;
+    }
+
+    .Name .top { background-color: #687D31; }
+    .Name-d .top { background-color: #19350C; }
+    .Name p, .Name-d p { font-size: 16px; }
+    .Name img, .Name-d img { width: 14px; transition: transform 0.2s ease; }
+    
+    .hide { display: none !important; }
+    .up { transform: rotate(180deg); }
+
+    /* Box Interno dos Produtores (Grid Limpo Conforme Produto.png mobile) */
+    .card {
+        background: rgba(104, 125, 49, 0.2);
+        padding: 12px 16px;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: auto auto;
+        gap: 4px 12px;
+        align-items: center;
+        border-bottom: 1px solid rgba(25, 53, 12, 0.1);
+        width: 100%;
+    }
+
+    .card img {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .card .nome {
+        grid-column: 2;
+        grid-row: 1;
+        font-weight: bold;
+        color: #19350C;
+        font-size: 15px;
+        text-align: left;
+    }
+
+    .card .disp {
+        grid-column: 2;
+        grid-row: 2;
+        font-size: 13px;
+        color: #333;
+        text-align: left;
+    }
+
+    /* Estação alinhada na linha inferior */
+    .card .est {
+        grid-column: 2;
+        grid-row: 2;
+        font-size: 13px;
+        color: #333;
+        margin-left: 70px; 
+        text-align: left;
+    }
+
+    .card .tel {
+        display: none; /* Esconde o número de telefone no mobile para dar espaço */
+    }
+
+    .card button {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        background-color: #687D31;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 6px 12px;
+        font-size: 11px;
+        font-weight: bold;
+        height: fit-content;
+    }
+
+    .bot {
+        margin: 16px 0;
+    }
 }

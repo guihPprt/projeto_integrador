@@ -11,10 +11,18 @@
 
 <body>
     <header>
-        <a href="index.html">
-            <img src="Assets/logo.svg">
+        <div class="menu-hamburger">
+            <img src="Assets/menu.svg" alt="Menu" onerror="this.style.display='none';">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <a href="index.html" class="logo-container">
+            <img src="Assets/logo.svg" class="logo-img">
         </a>
-        <nav>
+
+        <nav class="nav-desktop">
             <a onclick="alert('EM CONSTRUÇÂO')">PRODUTORES</a>
             <a href="produto.html">PRODUTOS</a>
             <div id="right">
@@ -24,26 +32,31 @@
                 </a>
             </div>
         </nav>
+
+        <div class="profile-mobile">
+            <a href="login.html">
+                <img src="Assets/profile.svg" alt="Perfil" onerror="this.parentNode.innerHTML='👤'">
+            </a>
+        </div>
     </header>
+    
     <main>
         <div class="Header">
             <div class="Left-A Arrow" onclick="back()">
-                <p>
-                    < </p>
+                <p>&lt;</p>
             </div>
             <div class="images">
                 <img src="Assets/capa_morango.jpeg">
                 <img src="Assets/Foto Destaque.png">
             </div>
             <div class="Right-A Arrow" onclick="next()">
-                <p>></p>
+                <p>&gt;</p>
             </div>
         </div>
 
         <h2 id="ds">DESTAQUES DA ESTAÇÃO</h2>
 
         <div class="itens">
-            <!-- Morango -->
             <div class="item" id="morango">
                 <div class="Name-d">
                     <div class="top" onclick="esconder('morango')">
@@ -71,7 +84,6 @@
                 </div>
             </div>
 
-            <!-- Caqui -->
             <div class="item" id="caqui">
                 <div class="Name">
                     <div class="top" onclick="esconder('caqui')">
@@ -91,7 +103,6 @@
                 </div>
             </div>
 
-            <!-- Figo -->
             <div class="item" id="figo">
                 <div class="Name-d">
                     <div class="top" onclick="esconder('figo')">
@@ -110,11 +121,11 @@
                     </div>
                 </div>
             </div>
-            <div class="bot">
-                <a href="produto.html">
-                    <button type="button" id="vmais" onclick="">VER MAIS</button>
-                </a>
-            </div>
+        </div> <div class="bot">
+            <a href="produto.html">
+                <button type="button" id="vmais">VER MAIS</button>
+            </a>
+        </div>
     </main>
 </body>
 <script src="scripts/script.js"></script>

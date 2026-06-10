@@ -544,3 +544,125 @@ td {
 }
 
 .linha-nova { animation: fadeIn 250ms ease; }
+
+/* =========================
+   Responsividade
+========================= */
+
+/* Telas até 1024px (tablets e menores) */
+@media (max-width: 1024px) {
+    aside {
+        width: 180px;
+        min-width: 180px;
+    }
+
+    main {
+        padding: 16px;
+    }
+
+    .panel {
+        width: 100%;
+        padding: 12px;
+    }
+
+    #ds {
+        font-size: 18px;
+        text-align: center;
+        transform: none;
+    }
+
+    table {
+        font-size: 13px;
+    }
+}
+
+/* Telas até 768px (celulares em modo paisagem) */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    aside {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 8px 16px;
+    }
+
+    aside nav {
+        flex-direction: row;
+        gap: 16px;
+        transform: none;
+    }
+
+    aside img {
+        height: 64px;
+        padding: 0;
+    }
+
+    main {
+        width: 100%;
+        padding: 16px;
+    }
+
+    .topform {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .inp input,
+    .inp select,
+    .botform input {
+        width: 100%;
+    }
+
+    #criar {
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+/* Telas até 480px (celulares em modo retrato) */
+@media (max-width: 480px) {
+    #ds {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+
+    .panel {
+        padding: 8px;
+    }
+
+    input{
+        width: 200px;
+    }
+
+    .inp label {
+        font-size: 13px;
+        
+    }
+
+    #criar {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .btn-alterar, .btn-apagar {
+        width: auto;
+        padding: 4px 10px;
+        font-size: 11px;
+    }
+}

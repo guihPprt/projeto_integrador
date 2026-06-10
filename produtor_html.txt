@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroConnect</title>
+    <link rel="shortcut icon" href="Assets/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/produtor.css">
+</head>
+
+<body>
+    <aside>
+        <a href="index.html">
+            <img src="Assets/logo2.svg">
+        </a>
+        <nav>
+            <a href="interessado.html">CLIENTES</a>
+            <a class="selected" href="produtor.html">PRODUTORES</a>
+        </nav>
+        <div>
+            <a href="index.html"><button type="button">SAIR</button></a>
+        </div>
+    </aside>
+    <main>
+        <h2 id="ds">ÁREA DO PRODUTOR</h2>
+        <div class="panel">
+            <div class="topform">
+                <div class="inp">
+                    <label for="prod">Produto</label>
+                    <input name="prod" type="text" id="prod">
+                </div>
+                <div class="inp">
+                    <label for="safras">Época de Safra</label>
+                    <select name="safras" id="safras">
+                        <option value="verao">Verão</option>
+                        <option value="outono">Outono</option>
+                        <option value="inverno">Inverno</option>
+                        <option value="primavera">Primavera</option>
+                    </select>
+                </div>
+                <div class="inp">
+                    <label for="qtd">Quantidade Disponível</label>
+                    <input name="qtd" id="qtd" type="number">
+                </div>
+            </div>
+            <div class="botform">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" name="endereco">
+            </div>
+            <button id="criar" type="button">ADICIONAR</button>
+
+            <div>
+                <table id="tabelaprodutos">
+                    <thead>
+                        <tr class="toprow">
+                            <th>Produto</th>
+                            <th>Época de Safra</th>
+                            <th>Quantidade Disponivel</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tpbody">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="scripts/produtor.js"></script>
+
+</html>

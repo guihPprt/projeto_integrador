@@ -4,17 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MicroConnect</title>
+    <title>MicroConnect - Cadastre-se</title>
     <link rel="shortcut icon" href="Assets/logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="styles/register.css">
 </head>
 
 <body>
     <header>
-        <a href="index.html">
-            <img src="Assets/logo.svg">
+        <div class="menu-hamburger mobile-only">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <a href="index.html" class="logo-container">
+            <img src="Assets/logo.svg" class="logo-img">
         </a>
-        <nav>
+
+        <nav class="nav-desktop">
             <a onclick="alert('EM CONSTRUÇÂO')">PRODUTORES</a>
             <a href="produto.html">PRODUTOS</a>
             <div id="right">
@@ -24,7 +31,14 @@
                 </a>
             </div>
         </nav>
+
+        <div class="profile-mobile mobile-only">
+            <a href="login.html">
+                <img src="Assets/profile.svg" alt="Perfil" onerror="this.parentNode.innerHTML='👤'">
+            </a>
+        </div>
     </header>
+
     <main>
         <h2 id="ds">CADASTRE-SE</h2>
         <div class="panel">
@@ -55,6 +69,5 @@
         </div>
     </main>
 </body>
-<script src="scripts/register.js"></script>
 
 </html>

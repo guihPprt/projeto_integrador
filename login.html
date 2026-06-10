@@ -4,17 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MicroConnect</title>
+    <title>MicroConnect - Login</title>
     <link rel="shortcut icon" href="Assets/logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="styles/Login.css">
 </head>
 
 <body>
     <header>
-        <a href="index.html">
-            <img src="Assets/logo.svg">
+        <div class="menu-hamburger mobile-only">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <a href="index.html" class="logo-container">
+            <img src="Assets/logo.svg" class="logo-img">
         </a>
-        <nav>
+
+        <nav class="nav-desktop">
             <a onclick="alert('EM CONSTRUÇÂO')">PRODUTORES</a>
             <a href="produto.html">PRODUTOS</a>
             <div id="right">
@@ -24,22 +31,29 @@
                 </a>
             </div>
         </nav>
+
+        <div class="profile-mobile mobile-only">
+            <a href="login.html">
+                <img src="Assets/profile.svg" alt="Perfil" onerror="this.parentNode.innerHTML='👤'">
+            </a>
+        </div>
     </header>
+
     <main>
         <h2 id="ds">ACESSAR SUA CONTA</h2>
         <div class="panel">
-            <form>
+            <form id="loginForm">
                 <div class="inp">
                     <label for="cpf">CPF/CNPJ</label>
-                    <input id="cpf" name="cpf" type="number">
+                    <input id="cpf" name="cpf" type="number" required>
                 </div>
                 <div class="inp">
-                    <label for="senha">Senha</label>
-                    <input id="pwd" type="password">
+                    <label for="pwd">Senha</label>
+                    <input id="pwd" type="password" required>
                 </div>
                 <div class="actions">
                     <a>ESQUECI MINHA SENHA</a>
-                    <button id="login" type="button">ENTRAR</button>
+                    <button id="login" type="submit">ENTRAR</button>
                 </div>
             </form>
         </div>

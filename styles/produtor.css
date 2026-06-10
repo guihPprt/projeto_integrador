@@ -68,13 +68,11 @@ header nav {
 ========================= */
 main {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
 }
-
 /* =========================
    Name Blocks
 ========================= */
@@ -285,9 +283,9 @@ button:hover {
    Extras
 ========================= */
 #ds {
-    transform: translateX(-95%) translateY(20px);
-    margin-bottom: 32px;
-    font-weight: 100;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 24px;
 }
 
 #vmais {
@@ -370,41 +368,42 @@ aside div button {
 
 .topform {
     display: flex;
+    gap: 16px;
+    width: 100%;
 }
-
 .inp {
-    display: flex;
-    flex-direction: column;
+    flex: 1;
+    min-width: 0;
 }
-
-#prod {
-    width: 336.5px;
-}
-
-#safras {
-    width: 150px;
-    height: 31px;
-}
-
-#qtd {
-    width: 180px;
-}
-
+#prod,
 #qtd,
-#prod {
-    height: 25px;
+#safras,
+.botform input {
+    width: 100%;
+    box-sizing: border-box;
 }
-
+#prod,
+#qtd,
+#safras {
+    height: 38px;
+}
 
 
 .botform {
-    display: flex;
-    flex-direction: column;
+    margin-top: 12px;
+}
+.botform input {
+    height: 38px;
 }
 
-.botform input {
-    width: 675.5px;
-    height: 25px;
+#criar {
+    width: 100%;
+    margin-top: 16px;
+    height: 42px;
+    background: #687D31;
+    color: white;
+    border: none;
+    border-radius: 4px;
 }
 
 .panel button {
@@ -421,10 +420,13 @@ aside div button {
 }
 
 .panel {
+    width: 100%;
+    max-width: 1000px;
     background-color: rgba(104, 125, 49, 0.25);
     padding: 16px;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
-
 /* Remove fundo verde que vaza para a tabela */
 table {
     width: 100%;
@@ -549,62 +551,38 @@ td {
    Responsividade
 ========================= */
 
-/* Telas até 1024px (tablets e menores) */
-@media (max-width: 1024px) {
-    aside {
-        width: 180px;
-        min-width: 180px;
-    }
-
-    main {
-        padding: 16px;
-    }
-
-    .panel {
-        width: 100%;
-        padding: 12px;
-    }
-
-    #ds {
-        font-size: 18px;
-        text-align: center;
-        transform: none;
-    }
-
-    table {
-        font-size: 13px;
-    }
-}
-
-/* Telas até 768px (celulares em modo paisagem) */
 @media (max-width: 768px) {
+
     body {
         flex-direction: column;
     }
 
     aside {
-        position: relative;
         width: 100%;
+        min-width: 100%;
         min-height: auto;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 8px 16px;
+        position: relative;
+        flex-direction: column;
+        padding: 16px;
+        box-sizing: border-box;
     }
 
     aside nav {
         flex-direction: row;
-        gap: 16px;
+        justify-content: center;
+        gap: 24px;
         transform: none;
-    }
-
-    aside img {
-        height: 64px;
-        padding: 0;
+        margin: 12px 0;
     }
 
     main {
         width: 100%;
         padding: 16px;
+        box-sizing: border-box;
+    }
+
+    .panel {
+        width: 100%;
     }
 
     .topform {
@@ -612,57 +590,23 @@ td {
         gap: 12px;
     }
 
-    .inp input,
-    .inp select,
-    .botform input {
+    .inp,
+    .botform {
         width: 100%;
     }
 
-    #criar {
+    #prod,
+    #qtd,
+    #safras,
+    #endereco {
         width: 100%;
-        margin-top: 12px;
     }
 
     table {
-        display: block;
+        min-width: 600px;
+    }
+
+    .panel > div:last-child {
         overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    th, td {
-        padding: 8px;
-        font-size: 12px;
-    }
-}
-
-/* Telas até 480px (celulares em modo retrato) */
-@media (max-width: 480px) {
-    #ds {
-        font-size: 16px;
-        margin-bottom: 16px;
-    }
-
-    .panel {
-        padding: 8px;
-    }
-
-    input{
-        width: 200px;
-    }
-
-    .inp label {
-        font-size: 13px;
-        
-    }
-
-    #criar {
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    .btn-alterar, .btn-apagar {
-        width: auto;
-        padding: 4px 10px;
-        font-size: 11px;
     }
 }

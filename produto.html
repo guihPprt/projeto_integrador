@@ -7,11 +7,23 @@
     <title>MicroConnect - Produtos</title>
     <link rel="shortcut icon" href="Assets/logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="styles/produtos.css">
+    <link rel="stylesheet" href="styles/pane.css">
 </head>
 
 <body>
+    <div class="popup hide" id="popup">
+        <div class="pane">
+            <h1>
+                MENU
+            </h1>
+            <a onclick="alert('EM CONSTRUÇÂO')">PRODUTORES</a>
+            <a href="produto.html">PRODUTOS</a>
+            <a href="register.html">CADASTRE-SE</a>
+            <button class="back-btn" id="back-btn" type="button">BACK</button>
+        </div>
+    </div>
     <header>
-        <div class="menu-hamburger mobile-only">
+        <div id="menu-ham" class="menu-hamburger mobile-only">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
@@ -125,4 +137,5 @@
 
     <script src="scripts/colapse.js"></script>
 </body>
+<script src="scripts/hamburger.js"></script>
 </html>

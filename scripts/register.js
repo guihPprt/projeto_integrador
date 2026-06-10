@@ -27,9 +27,9 @@ function register() {
         "email": document.getElementById("email").value,
         "type": "int"
     }
-
+    alert("USUARIO CADASTRADO")
     users.push(usuario);
     localStorage.setItem("users",JSON.stringify(users));
-    alert("USUARIO CADASTRADO")
+    
     
 }
